@@ -1,13 +1,12 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-
+import StateManager from "./redux/Provider";
+import { Metadata } from "next";
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata = {
+export const metadata: Metadata = {
  title: "deep learning",
- description: "deep learning",
+ description: "...",
 };
-
 export default function RootLayout({
  children,
 }: {
@@ -15,7 +14,9 @@ export default function RootLayout({
 }) {
  return (
   <html lang="en">
-   <body className={inter.className}>{children}</body>
+   <StateManager>
+    <body className={inter.className}>{children}</body>
+   </StateManager>
   </html>
  );
 }

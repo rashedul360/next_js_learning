@@ -1,6 +1,9 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "./redux/app/store";
+import { decrement, increment } from "./redux/features/slices/counterSlice";
 
 export default function Home() {
  const imageLoader = ({
@@ -14,12 +17,35 @@ export default function Home() {
  }): string => {
   return `https://i.ibb.co/Pr7gfMq/${src}?w=${width || 500}&q=${quality || 75}`;
  };
+ // ==============================// state redux//================================
+ const { count } = useSelector((state: RootState) => state.counter);
+ const dispatch = useDispatch();
+ // ==============================// state redux//================================
  return (
   <>
    <h3>hello</h3>
-   <Link href={"/1"}>
+   <h3 className="text-red-600">redux counter state count value {count}</h3>
+   <button
+    className="btn bg-red-500 rounded-full p-2 mx-2 text-white"
+    onClick={() => dispatch(increment())}
+   >
+    Increment
+   </button>
+   <button
+    className="btn bg-red-500 rounded-full p-2 mx-2 text-white"
+    disabled={count === 0}
+    onClick={() => dispatch(decrement())}
+   >
+    Decrement
+   </button>
+   <Link href={"/dashboard"} className="text-green-500">
+    Dashboard
+   </Link>
+   <br />
+   <Link href={"/1"} className="text-cyan-500">
     dynamic route and see data from server with generateStaticParams
    </Link>
+
    {/* <Image
     src="https://i.ibb.co/Pr7gfMq/Screenshot-3-removebg-preview.png"
     alt="logo web"
@@ -28,7 +54,7 @@ export default function Home() {
     priority
    /> */}
    <Image
-    // loader={imageLoader}
+    loader={imageLoader}
     src="Screenshot-3-removebg-preview.png"
     alt="logo web"
     // fill={true}
