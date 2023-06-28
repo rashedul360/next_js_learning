@@ -27,14 +27,14 @@ export default function Home() {
    <h3 className="text-red-600">redux counter state count value {count}</h3>
    <button
     className="btn bg-red-500 rounded-full p-2 mx-2 text-white"
-    onClick={() => dispatch(increment())}
+    onClick={() => dispatch(increment({ payload: 0 }))}
    >
     Increment
    </button>
    <button
     className="btn bg-red-500 rounded-full p-2 mx-2 text-white"
     disabled={count === 0}
-    onClick={() => dispatch(decrement())}
+    onClick={() => dispatch(decrement({ payload: 0 }))}
    >
     Decrement
    </button>
