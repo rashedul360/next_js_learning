@@ -53,7 +53,11 @@ export const generateMetadata = async ({ params }: Props) => {
   description: params.id,
   openGraph: {
    images: [photo.url],
+   title: photo.title || "photo title",
   },
+  // Output:
+  // <title>user.name</title>
+  // <meta property="og:title" content={photo.title} />
  };
 };
 // =================================================================

@@ -12,7 +12,7 @@ export default function Home() {
   width: number;
   quality: number;
  }): string => {
-  return `https://i.ibb.co/Pr7gfMq/${src}?w=${width}&q=${quality || 75}`;
+  return `https://i.ibb.co/Pr7gfMq/${src}?w=${width || 500}&q=${quality || 75}`;
  };
  return (
   <>
@@ -28,7 +28,7 @@ export default function Home() {
     priority
    /> */}
    <Image
-    // loader={imageLoader}
+    loader={imageLoader}
     src="Screenshot-3-removebg-preview.png"
     alt="logo web"
     // fill={true}

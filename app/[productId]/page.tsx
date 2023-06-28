@@ -1,11 +1,13 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
+import { notFound, redirect } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 async function getTodos() {
  const todoS = fetch("https://jsonplaceholder.typicode.com/todos")
   .then((res) => res.json())
   .catch((err) => console.error(err));
+
  return todoS;
 }
 
@@ -19,7 +21,10 @@ const page = async ({ params }: { params: { productId: string } }) => {
   }
  }, [id]);
  const todoS = await getTodos();
-
+ if (todoS.length < 300) {
+  // redirect("/");
+  // notFound();
+ }
  const data = fetch("https://jsonplaceholder.typicode.com/posts")
   .then((res) => res.json())
   .catch((err) => console.error(err));
