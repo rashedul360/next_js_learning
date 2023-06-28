@@ -28,7 +28,7 @@ export default function Home() {
     priority
    /> */}
    <Image
-    loader={imageLoader}
+    // loader={imageLoader}
     src="Screenshot-3-removebg-preview.png"
     alt="logo web"
     // fill={true}
@@ -41,8 +41,8 @@ export default function Home() {
     placeholder="blur"
     onLoadingComplete={() => console.log("loading complete")}
     // onLoad={(e) => console.log(e.target.naturalWidth)}
-    onError={(e) => console.error(e.target.id)}
-    unoptimized={false} // {false} | {true}
+    // onError={(e) => console.error(e.target.id)}
+    // unoptimized={false} // {false} | {true}
     loading="lazy"
    />
   </>
