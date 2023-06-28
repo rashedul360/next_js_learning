@@ -28,7 +28,7 @@ export default function Home() {
     priority
    /> */}
    <Image
-    loader={imageLoader}
+    // loader={imageLoader}
     src="Screenshot-3-removebg-preview.png"
     alt="logo web"
     // fill={true}
