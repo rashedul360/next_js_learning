@@ -39,8 +39,8 @@ export default function Home() {
     Decrement
    </button>
 
-   <Link href={"/dashboard"} className="text-cyan-500">
-    dashboard
+   <Link href={"/counter"} className="text-cyan-500">
+    counter
    </Link>
    <br />
    <Link href={"/1"} className="text-cyan-500">
