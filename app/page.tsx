@@ -38,11 +38,11 @@ export default function Home() {
    >
     Decrement
    </button>
-
-   <Link href={"/counter"} className="text-cyan-500">
-    counter
-   </Link>
-   <br />
+   <div>
+    <Link href={"/counter"} className="text-cyan-500">
+     counter
+    </Link>
+   </div>
    <Link href={"/1"} className="text-cyan-500">
     dynamic route and see data from server with generateStaticParams
    </Link>
