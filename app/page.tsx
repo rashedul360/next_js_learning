@@ -38,8 +38,9 @@ export default function Home() {
    >
     Decrement
    </button>
-   <Link href={"/dashboard"} className="text-green-500">
-    Dashboard
+
+   <Link href={"/dashboard"} className="text-cyan-500">
+    dashboard
    </Link>
    <br />
    <Link href={"/1"} className="text-cyan-500">
@@ -54,7 +55,7 @@ export default function Home() {
     priority
    /> */}
    <Image
-    // loader={imageLoader}
+    loader={imageLoader}
     src="Screenshot-3-removebg-preview.png"
     alt="logo web"
     // fill={true}
