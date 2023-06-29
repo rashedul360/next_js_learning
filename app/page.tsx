@@ -46,6 +46,10 @@ export default function Home() {
    <Link href={"/1"} className="text-cyan-500">
     dynamic route and see data from server with generateStaticParams
    </Link>
+   <hr />
+   <Link href={"/counter"} className="text-cyan-500">
+    go to counter page
+   </Link>
 
    {/* <Image
     src="https://i.ibb.co/Pr7gfMq/Screenshot-3-removebg-preview.png"
